@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button defaultHref="/home" slot="start"></ion-back-button>
+    <ion-title>history</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let item of items_all">
+    <ion-card-header>
+      <ion-card-subtitle>Time : {{item.timestamp | date:'medium'}} </ion-card-subtitle>
+      <ion-card-title>Glucose Level : {{item.value}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-range class="ion-padding"
+      aria-label="Custom range"
+      [min]="0"
+      [max]="250"
+      [step]="10"
+      value= "{{item.value}}"
+      [pin]="true"
+      [ticks]="true"
+      [snaps]="true"
+    ></ion-range>
+    <ion-chip>{{item.pre_post}}</ion-chip>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
