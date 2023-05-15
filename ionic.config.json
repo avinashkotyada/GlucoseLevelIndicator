@@ -1,0 +1,7 @@
+{
+  "name": "btp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
